@@ -9,12 +9,14 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
-  it 'when a bike is docked the bike is visable' do
-    expect(docking_station.bikes).not_to be_nil
-    bike = docking_station.release_bike
-    expect(docking_station).to respond_to(:return_bike)
+  it 'returns docked bikes' do
+    bike = Bike.new
+    expect(docking_station.dock(bike)).to eq docking_station.bikes
   end
 
-  it { expect(docking_station).to respond_to(:return_bike) }
+  it 'docks something' do
+    bike = Bike.new
+    expect(docking_station.dock(bike)).to eq bike
+  end
 
 end
