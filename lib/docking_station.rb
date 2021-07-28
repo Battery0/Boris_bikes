@@ -8,7 +8,7 @@ attr_reader :bikes
   end
 
   def release_bike
-    raise "errrorororor" unless @bikes
+    raise "No bikes are available" unless @bikes
     @bikes
   end
 

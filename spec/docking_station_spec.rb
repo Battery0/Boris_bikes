@@ -5,8 +5,9 @@ describe DockingStation do
   it { expect(docking_station).to respond_to(:release_bike) }
 
   it 'when a bike is released it works' do
-    bike = docking_station.release_bike
-    expect(bike).to be_working
+    bike = Bike.new
+    docking_station.dock(bike)
+    expect(docking_station.release_bike).to be_working
   end
 
   it 'returns docked bikes' do
@@ -20,6 +21,6 @@ describe DockingStation do
   end
 
   it 'raises error if no bikes are available' do
-    expect { docking_station.release_bike }.to raise_error("errrorororor")
+    expect { docking_station.release_bike }.to raise_error("No bikes are available")
   end
 end
