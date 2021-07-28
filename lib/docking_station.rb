@@ -1,18 +1,15 @@
-require 'bike'
+require './lib/bike'
 
 class DockingStation
 attr_reader :bikes
 
   def initialize
-    @bikes = "hello"
-  end
-
-  def hello
-    puts @bikes
+    @bikes
   end
 
   def release_bike
-    Bike.new # this method doesn't yet impact the bikes attribute of a docking_station object
+    raise "errrorororor" unless @bikes
+    @bikes
   end
 
   def dock(bike)
