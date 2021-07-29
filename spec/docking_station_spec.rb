@@ -6,14 +6,8 @@ describe DockingStation do
   it { expect(subject).to respond_to(:release_bike) }
 
   it 'when a bike is released it works' do
-<<<<<<< HEAD
     bike = subject.dock(Bike.new)
     expect(subject.release_bike).to be_working
-=======
-    bike = Bike.new
-    docking_station.dock(bike)
-    expect(docking_station.release_bike).to be_working
->>>>>>> 55bce4c4b4440f93c0fb03f67e7ff202b6fd692c
   end
 
   it 'it gets a bike' do
